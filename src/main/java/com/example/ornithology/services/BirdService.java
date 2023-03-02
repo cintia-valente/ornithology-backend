@@ -24,9 +24,9 @@ public class BirdService {
     }
 
     @Transactional
-    public BirdModel save(BirdModel birdModel, MultipartFile file) throws IOException {
-        var fileResponse  = fileService.save(file);
-        birdModel.setImageId(fileResponse.getId());
+    public BirdModel save(BirdModel birdModel) throws IOException {
+
+       // birdModel.setImageId(fileResponse.getId());
         return birdRepository.save(birdModel);
     }
 

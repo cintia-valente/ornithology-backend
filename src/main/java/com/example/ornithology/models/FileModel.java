@@ -23,7 +23,7 @@ public class FileModel {
 
     private Long size;
 
-    @Column(name = "picByte", length = 1000)
+    @Lob
     private byte[] picByte;
 
 

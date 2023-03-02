@@ -32,15 +32,13 @@ public class BirdController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    @RequestMapping(consumes = MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<BirdModel> upload(@RequestParam("bird") String bird,
-                                            @RequestParam(value = "file", required = false) MultipartFile file)
+    public ResponseEntity<BirdModel> upload(@RequestBody BirdModel bird)
             throws IOException {
 
-        var birdModel = new BirdModel();
-
-        BirdResponseDto birdDto = new ObjectMapper().readValue(bird, BirdResponseDto.class);
-        BeanUtils.copyProperties(birdDto, birdModel);
+//        var birdModel = new BirdModel();
+//
+//        BirdResponseDto birdDto = new ObjectMapper().readValue(bird, BirdResponseDto.class);
+//        BeanUtils.copyProperties(birdDto, birdModel);
 
       //  String filePath = fileService.saveImageFile(birdDto.getImagePath());
 
@@ -48,7 +46,7 @@ public class BirdController {
         //birdModel.setImagePath(filePath);
 
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(birdService.save(birdModel, file));
+        return ResponseEntity.status(HttpStatus.CREATED).body(birdService.save(bird));
 
     }
 

@@ -32,7 +32,7 @@ public class FileService {
 
     public FileModel save(MultipartFile file) throws IOException {
         FileModel fileModel = new FileModel();
-        fileModel.setName(file.getOriginalFilename());
+        fileModel.setName(StringUtils.cleanPath(file.getOriginalFilename()));
         fileModel.setContentType(file.getContentType());
         fileModel.setPicByte(file.getBytes());
         fileModel.setSize(file.getSize());
