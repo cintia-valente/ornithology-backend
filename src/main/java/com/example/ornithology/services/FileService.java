@@ -40,7 +40,7 @@ public class FileService {
         return fileRepository.save(fileModel);
     }
 
-    public Optional<FileModel> getFile(Long id) throws IOException {
+    public Optional<FileModel> getFile(Long id) {
         return fileRepository.findById(id);
     }
     public List<FileModel> getAllFiles() throws IOException {
@@ -81,7 +81,7 @@ public class FileService {
         }
         System.out.println("Compressed Image Byte Size - " + outputStream.toByteArray().length);
         return outputStream.toByteArray();
-    }// uncompress the image bytes before returning it to the angular application
+    }
 
     public static byte[] decompressZLib(byte[] data) {
         Inflater inflater = new Inflater();
@@ -97,12 +97,10 @@ public class FileService {
             outputStream.close();
         } catch (IOException ioe) {
         } catch (DataFormatException e) {
-        }    return outputStream.toByteArray();}
+        }    return outputStream.toByteArray();
+        }
 
-
-
-//    public void deleteFile(MultipartFile file) throws IOException {
-//       fileRepository.delete(fileEntity);
-//
-//    }
+    public void deleteFile(FileModel file) throws IOException {
+       fileRepository.delete(file);
+    }
 }

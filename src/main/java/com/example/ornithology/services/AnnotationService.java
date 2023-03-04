@@ -39,19 +39,13 @@ public class AnnotationService {
         return annotationRepository.findByBirdId(idBird);
     }
 
-    public AnnotationModel update(Long idAnnotation, AnnotationDto annotationDto) throws IOException {
+    public AnnotationModel update(Long idAnnotation, AnnotationDto annotationDto) {
         Optional<AnnotationModel> annotationModelOptional  = annotationRepository.findById(idAnnotation);
         Optional<BirdModel> birdModelOptional = birdService.findById(annotationModelOptional.get().getBird().getId());
 
-        //birdModelOptional.get().setImageId(annotationDto.getBird().getImageId());
         birdModelOptional.get().setNamePtbr(annotationDto.getBird().getNamePtbr());
         birdModelOptional.get().setNameEnglish(annotationDto.getBird().getNameEnglish());
         birdModelOptional.get().setNameLatin(annotationDto.getBird().getNameLatin());
-        birdModelOptional.get().setSize(annotationDto.getBird().getSize());
-        birdModelOptional.get().setGenre(annotationDto.getBird().getGenre());
-        birdModelOptional.get().setColor(annotationDto.getBird().getColor());
-        birdModelOptional.get().setFamily(annotationDto.getBird().getFamily());
-        birdModelOptional.get().setHabitat(annotationDto.getBird().getHabitat());
 
         var birdModel = birdModelOptional.get();
         var annotationModel = annotationModelOptional.get();

@@ -2,6 +2,7 @@ package com.example.ornithology.services;
 
 import com.example.ornithology.dto.BirdResponseDto;
 import com.example.ornithology.models.BirdModel;
+import com.example.ornithology.models.FileModel;
 import com.example.ornithology.repository.BirdRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,33 +19,21 @@ public class BirdService {
     final FileService fileService;
 
     public BirdService(BirdRepository birdRepository, FileService fileService) {
-
         this.birdRepository = birdRepository;
         this.fileService = fileService;
     }
 
     @Transactional
     public BirdModel save(BirdModel birdModel) throws IOException {
-
-       // birdModel.setImageId(fileResponse.getId());
         return birdRepository.save(birdModel);
     }
 
     public List<BirdModel> findAll() throws IOException {
-
        return birdRepository.findAll();
     }
 
-    public Optional<BirdModel> findById(Long idBird) throws IOException {
+    public Optional<BirdModel> findById(Long idBird) {
         fileService.getFile(idBird);
         return birdRepository.findById(idBird);
     }
-
-//    @Transactional
-//    public void delete(BirdModel birdModel) throws IOException {
-//
-//        fileService.deleteFile(birdModel);
-//    }
-
-
 }

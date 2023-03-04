@@ -13,22 +13,29 @@ import java.util.Optional;
 @NoArgsConstructor
 public class BirdResponseDto {
 
-   private Optional<FileModel> file;
-   // private String imagePath;
+    private Optional<FileModel> file;
+   
     @NotBlank
     private String namePtbr;
+
     @NotBlank
     private String nameEnglish;
+
     @NotBlank
     private String nameLatin;
+
     @NotBlank
     private String size;
+
     @NotBlank
     private String genre;
+
     @NotBlank
     private String color;
+
     @NotBlank
     private String family;
+    
     @NotBlank
     private String habitat;
 

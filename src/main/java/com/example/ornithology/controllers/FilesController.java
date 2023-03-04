@@ -6,14 +6,11 @@ import java.util.Optional;
 import com.example.ornithology.models.FileModel;
 import com.example.ornithology.services.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import static com.example.ornithology.services.FileService.decompressZLib;
 import static org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE;
 
 @RestController
@@ -32,7 +29,6 @@ public class FilesController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(consumes = MULTIPART_FORM_DATA_VALUE)
-
     public ResponseEntity<String> upload(@RequestParam(value = "file", required = false)
                                             MultipartFile file) {
         try {
@@ -45,7 +41,6 @@ public class FilesController {
                 .body(String.format("Could not upload the file: %s!", file.getOriginalFilename()));
         }
     }
-
 
 
     @GetMapping("/{id}")

@@ -1,24 +1,20 @@
 package com.example.ornithology.controllers;
 
-import com.example.ornithology.dto.BirdResponseDto;
 import com.example.ornithology.models.BirdModel;
+import com.example.ornithology.models.FileModel;
 import com.example.ornithology.services.BirdService;
 import com.example.ornithology.services.FileService;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
-import static org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/bird")
 public class BirdController {
 
@@ -34,18 +30,6 @@ public class BirdController {
     @ResponseStatus(CREATED)
     public ResponseEntity<BirdModel> upload(@RequestBody BirdModel bird)
             throws IOException {
-
-//        var birdModel = new BirdModel();
-//
-//        BirdResponseDto birdDto = new ObjectMapper().readValue(bird, BirdResponseDto.class);
-//        BeanUtils.copyProperties(birdDto, birdModel);
-
-      //  String filePath = fileService.saveImageFile(birdDto.getImagePath());
-
-        // set the file path to the bird model
-        //birdModel.setImagePath(filePath);
-
-
         return ResponseEntity.status(HttpStatus.CREATED).body(birdService.save(bird));
 
     }
@@ -54,12 +38,5 @@ public class BirdController {
     public ResponseEntity<List<BirdModel>> getAllBird() throws IOException {
         return ResponseEntity.status(HttpStatus.OK).body(birdService.findAll());
     }
-
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Object> deleteBird(@RequestParam("bird") String bird) throws IOException {
-//        birdService.delete(bird);
-//        return ResponseEntity.noContent().build();
-//    }
-
 
 }

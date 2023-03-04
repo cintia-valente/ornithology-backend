@@ -25,8 +25,8 @@ public class AnnotationModel implements Serializable {
 
     @Column
     private LocalDateTime date;
+
     @Column(nullable = false)
     private String place;
-
 
 }

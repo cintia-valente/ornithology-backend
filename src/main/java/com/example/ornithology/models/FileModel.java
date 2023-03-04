@@ -26,5 +26,4 @@ public class FileModel {
     @Lob
     private byte[] picByte;
 
-
 }

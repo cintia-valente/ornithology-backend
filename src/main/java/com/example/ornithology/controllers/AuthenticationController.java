@@ -1,8 +1,6 @@
 package com.example.ornithology.controllers;
 
 import com.example.ornithology.dto.AuthenticationDto;
-//import com.example.ornithology.models.UserModel;
-//import com.example.ornithology.security.TokenService;
 import com.example.ornithology.models.AuthenticationModel;
 import com.example.ornithology.security.DataTokenJWT;
 import com.example.ornithology.security.TokenService;

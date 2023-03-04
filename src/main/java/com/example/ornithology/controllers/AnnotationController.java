@@ -8,12 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/annotation")
 public class AnnotationController {
 
@@ -46,7 +45,7 @@ public class AnnotationController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<AnnotationModel> updateAnnotation(@PathVariable(value = "id") Long id, @RequestBody AnnotationDto annotationDto) throws IOException {
+    public ResponseEntity<AnnotationModel> updateAnnotation(@PathVariable(value = "id") Long id, @RequestBody AnnotationDto annotationDto) {
         AnnotationModel updatedAnnotation = annotationService.update(id, annotationDto);
         return ResponseEntity.ok(updatedAnnotation);
     }

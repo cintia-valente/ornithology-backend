@@ -21,9 +21,6 @@ public class BirdModel implements Serializable {
     @Column
     private Long imageId;
 
-//    @Column(name = "image_path")
-//    private String imagePath;
-
     @Column(nullable = false)
     private String namePtbr;
 

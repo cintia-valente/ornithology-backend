@@ -37,8 +37,4 @@ public class TokenService {
             throw new RuntimeException("Token jwt inválido ou expirado!", exception);
         }
     }
-
-//    private Instant dateExpiration() {
-//        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
-//    }
 }

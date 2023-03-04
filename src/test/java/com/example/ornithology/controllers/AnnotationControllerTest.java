@@ -28,24 +28,9 @@ public class AnnotationControllerTest {
     private AnnotationModel annotationModel;
 
     private AnnotationDto annotationDto;
-    //private BirdDto birdDto;
-    private BirdModel birdModel;
 
     @Test
     void postAnnotation() {
-        birdModel = new BirdModel(
-                null,
-                null,
-                "Canário",
-                "Blue-and-yellow Macaw",
-                "Ara ararauna",
-                "90 cm",
-                "Can",
-                "Amarelo",
-                "Psittacidae",
-                "Floresta"
-        );
-
         annotationModel = new AnnotationModel(
                 null,
                 new BirdModel(
@@ -92,24 +77,6 @@ public class AnnotationControllerTest {
 
     @Test
     void getAllAnnotation() {
-        annotationDto = new AnnotationDto(
-                new BirdModel(
-                        null,
-                        null,
-                        "Canário",
-                        "Blue-and-yellow Macaw",
-                        "Ara ararauna",
-                        "90 cm",
-                        "Can",
-                        "Amarelo",
-                        "Psittacidae",
-                        "Floresta"
-                ),
-                null,
-                "Amazonas"
-        );
-
-
         var response = assertDoesNotThrow(() -> annotationController.getAllAnnotation());
         assertNotNull(response);
         assertEquals(ResponseEntity.status(HttpStatus.OK).body(annotationService.findAll()), response);
@@ -117,19 +84,6 @@ public class AnnotationControllerTest {
 
     @Test
     void updateAnnotation() {
-        birdModel = new BirdModel(
-                null,
-                null,
-                "Canário",
-                "Blue-and-yellow Macaw",
-                "Ara ararauna",
-                "90 cm",
-                "Can",
-                "Amarelo",
-                "Psittacidae",
-                "Floresta"
-        );
-
         annotationModel = new AnnotationModel(
                 null,
                 new BirdModel(
@@ -165,7 +119,6 @@ public class AnnotationControllerTest {
                 "Amazonas"
         );
 
-
         var response = assertDoesNotThrow(() -> annotationController.updateAnnotation(annotationModel.getIdAnnotation(), annotationDto));
         assertNotNull(response);
 
@@ -173,19 +126,6 @@ public class AnnotationControllerTest {
 
     @Test
     void deleteAnnotation() {
-        birdModel = new BirdModel(
-                null,
-                null,
-                "Canário",
-                "Blue-and-yellow Macaw",
-                "Ara ararauna",
-                "90 cm",
-                "Can",
-                "Amarelo",
-                "Psittacidae",
-                "Floresta"
-        );
-
         annotationModel = new AnnotationModel(
                 null,
                 new BirdModel(
