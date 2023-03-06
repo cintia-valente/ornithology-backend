@@ -1,7 +1,6 @@
 package com.example.ornithology.controllers;
 
 import com.example.ornithology.models.BirdModel;
-import com.example.ornithology.models.FileModel;
 import com.example.ornithology.services.BirdService;
 import com.example.ornithology.services.FileService;
 import org.springframework.http.HttpStatus;

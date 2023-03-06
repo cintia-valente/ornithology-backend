@@ -1,11 +1,8 @@
 package com.example.ornithology.services;
 
-import com.example.ornithology.dto.BirdResponseDto;
 import com.example.ornithology.models.BirdModel;
-import com.example.ornithology.models.FileModel;
 import com.example.ornithology.repository.BirdRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
 import java.io.IOException;
