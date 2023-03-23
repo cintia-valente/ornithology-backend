@@ -9,18 +9,10 @@
 Projeto da equipe academia da empresa DBServer. 
 O projeto tem como objetivo permitir que pessoas ornitólogas cadastre anotações, referentes a aves estudadas.
 
-# Execução
+## Execução
 
 <ul>
   <li>Na IDE, instalar as dependências do <b>Maven</b> e clicar em <b>Run</b> para executar.</li>
-</ul>
-
-# Tecnologias utilizadas
-
-<ul>
-  <li><b>Backend:</b> Spring Boot</li>
-  <li><b>Banco de Dados:</b> PostgreSQL</li>
-  <li><b>Autenticação:</b> JWT</li>
 </ul>
 
 ## Testes unitários
@@ -30,7 +22,15 @@ O projeto tem como objetivo permitir que pessoas ornitólogas cadastre anotaçõ
   <li>No servidor, em <b>src/test</b> clique com o botão direito em <b>OrnithologyApplicationTests</b> e clique em <b>'RunOrnithologyApplicationTests'</b> para rodar todos os testes.</li>
 </ul>
 
-# Usuários cadastrados no banco de dados:
+## Tecnologias utilizadas
+
+<ul>
+  <li><b>Backend:</b> Spring Boot</li>
+  <li><b>Banco de Dados:</b> PostgreSQL</li>
+  <li><b>Autenticação:</b> JWT</li>
+</ul>
+
+## Usuários cadastrados no banco de dados:
 
 <ul>
     <li><b>maite@email.com</b> 
