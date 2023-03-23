@@ -18,7 +18,6 @@ O projeto tem como objetivo permitir que pessoas ornitólogas cadastre anotaçõ
 ## Testes unitários
 
 <ul>
-  <li>No cliente, na IDE, clique em <b>Run and Debug</b>, e execute todos os testes clicando em <b>Start Debugging</b>.</li>
   <li>No servidor, em <b>src/test</b> clique com o botão direito em <b>OrnithologyApplicationTests</b> e clique em <b>'RunOrnithologyApplicationTests'</b> para rodar todos os testes.</li>
 </ul>
 
